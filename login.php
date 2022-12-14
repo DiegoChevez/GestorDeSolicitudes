@@ -11,23 +11,18 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> <!-- Estilos / BOOTSTRAP -->
     <link rel="stylesheet" href="css/styles.css"> <!-- Estilos / Generales -->
 
-    <script src="https://kit.fontawesome.com/0fc218370a.js" crossorigin="anonymous"></script>
-    <!-- FontAwesome / Icons -->
+    <script src="https://kit.fontawesome.com/0fc218370a.js" crossorigin="anonymous"></script> <!-- FontAwesome / Icons -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert / Alerts -->
 </head>
 
 <body id="Index-login" class="contenedor">
 
     <header>
-        <?php
-        include "php/conexcionBD.php";
-        include "php/loginConfig.php";
-        ?>
     </header>
 
     <section>
 
-        <form action="" method="post">
+        <form action="php/loginConfig.php" method="post">
             <div class="mb-3 row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
@@ -57,6 +52,19 @@
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="js/config.js"></script>
     <script src="sweetalert2.all.min.js"></script> <!-- SweetAlert / Pluggin -->
+    <?php
+    if(!isset($_GET['error'])){
+    ?>
+    <script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href="">Why do I have this issue?</a>'
+        })
+    </script>
+    <?php }?>
+
 </body>
 
 </html>
