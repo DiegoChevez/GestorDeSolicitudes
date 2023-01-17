@@ -66,53 +66,61 @@
             </fieldset>
 
             <!--Informacion de Produccion Multimedia-->
-            <fieldset class="slot3"><legend>Produccion Multimedia</legend>
+            <fieldset class="slot3"><legend>Fecha de Realización</legend>
 
                 <label class="form-label" for="">Especifica la fecha a realizar la produccion</label> <br>
-                <input class="form-control" type="date" name="" id="">
+                <input class="form-control" type="date" name="FechaProduccion" id="FechaProduccion">
+                <label for="FechaProduccion" class="msjAdvertencia" id="AdvFechaP"></label>
 
                 <br><br>
 
                 <label class="form-label" for="">Escoje el horario a realizar la produccion</label><br>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="8-10-am"> 8:00 a 10:00 AM</label>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="10-12-md"> 10:00 - 12:00 md</label>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> 2:00 - 4:00 pm</label>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> </label> <br>
+                <select class="form-select" name="" id="HorarioProduccion">
+                    <option value="0" disabled hidden selected>Horarios Disponibles</option>
+                    <option value="8-10-am"> 8:00 a 10:00 AM </option>
+                    <option value="10-12-md"> 10:00 - 12:00 MD </option>
+                    <option value="2-4-pm"> 2:00 - 4:00 PM </option>
+                </select>
                 <i>Esta fecha sera considerada por nuestro equipo, por lo que le pedimos estar pendiente a su confirmacion o en caso contrario la fecha propuesta</i>
+                <label for="HorarioProduccion" class="msjAdvertencia" id="AdvHorarioP"></label>
 
                 <br><br>
 
-                <input class="btn btn-info" type="button" value="Siguiente" onclick="ValidaSlot3()">
+                <input class="btn btn-info" type="button" value="Siguiente" onclick="Part3()">
 
                 <br>
 
             </fieldset>
-            
-            <fieldset class="slotEX"><legend>Produccion Multimedia</legend>
+
+            <fieldset class="slot5"><legend>Produccion Multimedia</legend>
 
                 <label>Elige la Produccion</label> <br>
+                <select class="form-select" name="" id="TipoProduccion">
+                    <option value="0" disabled hidden selected>Producciones Multimedia</option>
+                    <option value="fotografias"> Toma de fotografias </option>
+                    <option value="video"> Grabacion de video </option>
+                    <option value="ProduccionCompleta"> Video y Edicion </option>
+                </select>
                 
-                <label class="form-check-label"><input class="form-check-input" type="radio" name="produccion" value="fotografias">Toma de fotografias</label>
-                <label class="form-check-label"><input class="form-check-input" type="radio" name="produccion" value="video">Grabacion de video</label>
-                <label class="form-check-label"><input class="form-check-input" type="radio" name="produccion" value="ProduccionCompleta">Video y Edicion</label>
-
                 <br><br>
 
                 <label class="form-label" for="">Especifica la fecha a realizar la produccion</label> <br>
-                <input class="form-control" type="date" name="" id="">
+                <input class="form-control" type="date" name="" id="FechaProduccion">
 
                 <br><br>
 
                 <label class="form-label" for="">Escoje el horario a realizar la produccion</label><br>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="8-10-am"> 8:00 a 10:00 AM</label>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="10-12-md"> 10:00 - 12:00 md</label>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> 2:00 - 4:00 pm</label>
-                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> </label> <br>
+                <select class="form-select" name="" id="HorarioProduccion">
+                    <option value="0" disabled hidden selected>Horarios Disponibles</option>
+                    <option value="8-10-am"> 8:00 a 10:00 AM </option>
+                    <option value="10-12-md"> 10:00 - 12:00 MD </option>
+                    <option value="2-4-pm"> 2:00 - 4:00 PM </option>
+                </select>
                 <i>Esta fecha sera considerada por nuestro equipo, por lo que le pedimos estar pendiente a su confirmacion o en caso contrario la fecha propuesta</i>
 
                 <br><br>
 
-                <input class="btn btn-info" type="button" value="Siguiente" onclick="ValidaSlot3()">
+                <input class="btn btn-info" type="button" value="Siguiente" onclick="Part5()">
 
                 <br>
 

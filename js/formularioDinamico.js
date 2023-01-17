@@ -1,9 +1,9 @@
 // Configuracion del formulario dinamico de "NuevaSolicitudes"
 const $slot1 = document.querySelector('.slot1');
 const $slot2 = document.querySelector('.slot2');
-const $slot3A = document.querySelector('.slot3A');
-const $slot3B = document.querySelector('.slot3B');
+const $slot3 = document.querySelector('.slot3');
 const $slot4 = document.querySelector('.slot4');
+const $slot5 = document.querySelector('.slot5');
 
 function Part1(){
     var $contacto = document.getElementById('NombreContacto').value;
@@ -84,9 +84,55 @@ function Part2(){
         AdvAnterior.style.setProperty("display","none");
         document.getElementById('ProgramaInput').classList.remove("formWarning");
 
-        $slot2.style.setProperty("display","none");
-        $slot3A.style.setProperty("display","block");
-
-        
+        if($arte=="2"){
+            $slot2.style.setProperty("display","none");
+            $slot5.style.setProperty("display","block");
+        }else{
+            $slot2.style.setProperty("display","none");
+            $slot3.style.setProperty("display","block");
+        }
     }
+}
+
+function Part3(){
+    var $fProduccion = document.getElementById('FechaProduccion').value;
+    var $hProduccion = document.getElementById('HorarioProduccion').value;
+
+    if($fProduccion==''){
+        let inputFproduccion = document.querySelector('#FechaProduccion').value;
+        inputFproduccion.classList.add("formWarning");
+
+        let msjAdvertencia = document.getElementById('AdvFechaP');
+        msjAdvertencia,style.setProperty("display","block");
+        msjAdvertencia.innerHTML = "*Seleccione una Fecha"
+    }else{
+        if($hProduccion=='0'){
+            let inputHproduccion = document.querySelector('#HorarioProduccion').value;
+            inputHproduccion.classList.add("formWarning");
+
+            let msjAdvertencia = document.getElementById('AdvHorarioP');
+            msjAdvertencia,style.setProperty("display","block");
+            msjAdvertencia.innerHTML = "*Seleccione un Horario"
+        }else{
+            $slot3.style.setProperty("display","none");
+            $slot4.style.setProperty("display","block");
+        }
+    }
+
+}
+
+function Part5(){
+    var $fProduccion = document.getElementById('FechaProduccion').value;
+    var $hProduccion = document.getElementById('HorarioProduccion').value;
+    var $tProduccion = document.getElementById('TipoProduccion').value;
+
+    if($fProduccion==''){
+        let inputFproduccion = document.querySelector('#FechaProduccion').value;
+        inputFproduccion.classList.add("formWarning");
+
+        let msjAdvertencia = document.getElementById('AdvFechaP');
+        msjAdvertencia,style.setProperty("display","block");
+        msjAdvertencia.innerHTML = "*Seleccione una Fecha"
+    }
+
 }
