@@ -20,22 +20,33 @@ if(!empty($_POST["btnIngresar"])){
         if($existe_usuario ==1){
             session_start();
             switch($rol){
-                case 1:
+                case 1: //En caso de que sea Administrador
                     $_SESSION['nickname'] = $usuario;
-                    header("location:Administrador/plantilla.html");
-                    break;
-
-                case 2:
-                    echo "DEVELOPER";
-                    break;
+                    header("location:../Administrador/plantilla.html");
+                break;
+                case 2: //En caso de que sea Developer
+                    $_SESSION['nickname'] = $usuario;
+                    header("location:../Administrador/plantilla.html");
+                break;
+                case 3: //En caso de que sea Usuario
+                    $_SESSION['nickname'] = $usuario;
+                    header("location:../Usuarios/plantilla.html");
+                break;
+                case 4: //en caso de que sea Master
+                    $_SESSION['nickname'] = $usuario;
+                    header("location:../Administrador/plantilla2.html");
+                break;
+                case 4: //En caso de que el usuario no tenga un rol 
+                    header("location:../Usuarios/plantilla.html");
+                break;
             }
 
         }else{
-            header('Location: ../login.php');
+            header('Location: ../login.php?error=UsuarioInexistente');
         }
         
     } else {
-        header('Location: ../login.php?error=1');
+        header('Location: ../login.php?error=CamposVacios');
         }
     
 }

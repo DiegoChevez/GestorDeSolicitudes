@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas</title>
+    <link rel="shortcut icon" href="../ArchivosETC/funda.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"> <!-- Estilos / BOOTSTRAP -->
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Estilos / Generales -->
+    <script src="https://kit.fontawesome.com/0fc218370a.js" crossorigin="anonymous"></script> <!-- FontAwesome / Icons -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert / Alerts -->
+</head>
+
+<body id="NuevasSolicitudes" class="contenedor">
+
+    <header>
+    </header>
+
+    <section>
+
+        <form action="" class="form-user-solis">
+            <!--Informacion Basica-->
+            <fieldset class="slot1"><legend>Informacion Basica</legend>
+
+                <label class="form-label" for="NombreContacto">Digite el nombre del contacto / encargado</label><br>
+                <input class="form-control" type="text" name="NombreContacto" id="NombreContacto"  required>
+                <label for="NombreContacto" class="msjAdvertencia" id="AdvContacto"></label>
+                <i>En el siguiente apartado debera introducir el nombre del contacto, en caso de presentarse consultas poder comunicarnos con dicha persona</i> <br>
+
+                <label class="form-label" for="Programa">Selecciona el Programa al que Pertenece la Solicitud</label>
+                <select class="form-select" name="Programa" id="ProgramaInput" required>
+                    <option value="0" selected disabled hidden>Programa</option>
+                    <option value="Oportunidades">Oportunidades</option>
+                </select>
+                <label for="NombreContacto" class="msjAdvertencia" id="AdvPrograma"></label><br>
+
+                <label class="form-label" for="Areas">Area al que Pertenece</label>
+                <Select class="form-select" name="Areas" id="AreasInput" required>
+                    <option selected disabled hidden value="0"> Area </option>
+                    <option value="FS1"> Fase 1 </option>
+                    <option value="FS2"> Fase 2 </option>
+                    <option value="FS3"> Fase 3 </option>
+                    <option value="Admin"> Administracion </option>
+                    <option value="N/A"> N / A </option>
+                </Select>
+                <label for="NombreContacto" class="msjAdvertencia" id="AdvArea"></label><br>
+
+                <button type="button" class="btn btn-secondary" onclick="Part1()">Siguiente</button>
+
+            </fieldset>
+
+            <!--Informacion del Arte-->
+            <fieldset class="slot2"><legend>Informacion de la Solicitud</legend>
+
+                <label class="form-label" for="Artes">Seleccione el Tipo de arte que desea</label>
+                <select class="form-select" name="" id="ArtesInput">
+                    <option value="0" disabled hidden selected>Artes</option>
+                    <option value="1"> Arte digital</option>
+                    <option value="2"> Produccion Multimedia</option>
+                </select>
+                <label class="msjAdvertencia" for="Artes" id="AdvArtes"></label> <br>
+
+                <button type="button" class="btn btn-secondary" onclick="Part2()">Siguiente</button>
+
+            </fieldset>
+
+            <!--Informacion de Produccion Multimedia-->
+            <fieldset class="slot3"><legend>Produccion Multimedia</legend>
+
+                <label class="form-label" for="">Especifica la fecha a realizar la produccion</label> <br>
+                <input class="form-control" type="date" name="" id="">
+
+                <br><br>
+
+                <label class="form-label" for="">Escoje el horario a realizar la produccion</label><br>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="8-10-am"> 8:00 a 10:00 AM</label>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="10-12-md"> 10:00 - 12:00 md</label>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> 2:00 - 4:00 pm</label>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> </label> <br>
+                <i>Esta fecha sera considerada por nuestro equipo, por lo que le pedimos estar pendiente a su confirmacion o en caso contrario la fecha propuesta</i>
+
+                <br><br>
+
+                <input class="btn btn-info" type="button" value="Siguiente" onclick="ValidaSlot3()">
+
+                <br>
+
+            </fieldset>
+            
+            <fieldset class="slotEX"><legend>Produccion Multimedia</legend>
+
+                <label>Elige la Produccion</label> <br>
+                
+                <label class="form-check-label"><input class="form-check-input" type="radio" name="produccion" value="fotografias">Toma de fotografias</label>
+                <label class="form-check-label"><input class="form-check-input" type="radio" name="produccion" value="video">Grabacion de video</label>
+                <label class="form-check-label"><input class="form-check-input" type="radio" name="produccion" value="ProduccionCompleta">Video y Edicion</label>
+
+                <br><br>
+
+                <label class="form-label" for="">Especifica la fecha a realizar la produccion</label> <br>
+                <input class="form-control" type="date" name="" id="">
+
+                <br><br>
+
+                <label class="form-label" for="">Escoje el horario a realizar la produccion</label><br>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="8-10-am"> 8:00 a 10:00 AM</label>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="10-12-md"> 10:00 - 12:00 md</label>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> 2:00 - 4:00 pm</label>
+                <label class="form-label"><input class="form-check-input" type="radio" name="horario" value="2-4-pm"> </label> <br>
+                <i>Esta fecha sera considerada por nuestro equipo, por lo que le pedimos estar pendiente a su confirmacion o en caso contrario la fecha propuesta</i>
+
+                <br><br>
+
+                <input class="btn btn-info" type="button" value="Siguiente" onclick="ValidaSlot3()">
+
+                <br>
+
+            </fieldset>
+
+            <!--Informacion Final-->
+            <fieldset class="slot4"><legend>Informacion Final</legend>
+
+                <label class="form-label" for="textProposito">¿Cual es el Proposito?</label> <br>
+                <textarea name="textProposito" class="form-control" placeholder="Proposito" id="floatingTextarea"></textarea><br>
+
+                <label class="form-label" for="textDetalles">Detalles</label> <br>
+                <textarea name="textDetalles" class="form-control" placeholder="Detalles" id="floatingTextarea"></textarea>
+                <i>Detalles que tiene que llevar el arte solicitado o cualquier información relevante para la producción.</i>
+                <i>Si es vídeo defina el enfoque o el mensaje a transmitir.Asegúrate de escribir todo lo necesario para la creación del arte.</i> <br>
+
+                <label class="form-label" for="fechaEntrega">Seleccione la fecha de entrega final</label>
+                <input class="form-control" type="date" name="fechaEntrega" id="">
+
+                <br>
+
+                <label class="form-label" for="">Referecias</label>
+                <input class="form-control" type="file" name="" id="">
+                <i>Si tienes alguna referencia de arte o algo que necesites que se tome en consideración para la creación, adjúntala aquí.Si es un vídeo, debes adjuntar guion o un pequeño resumen.</i>
+
+                <fieldset><legend>Nota</legend>
+                    <i>Te recordamos que los  tiempos estimados para poderte dar un buen servicio tanto de de producción como de diseño varían de 2 a 3 semanas. En el caso de diseño, este tiempo es separado del tiempo que toma el proveedor de hacer entregas. Por favor confirma que estas enterado.</i>
+                </fieldset>
+
+
+            </fieldset>
+
+        </form>
+
+    </section>
+
+    <footer>
+    </footer>
+
+
+
+
+    <!-- Configuraciones / JavaScript -->
+    <script src="../Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/formularioDinamico.js"></script>
+</body>
+</html>

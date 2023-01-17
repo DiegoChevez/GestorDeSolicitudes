@@ -1,0 +1,17 @@
+.slot2,.slot3,.slot4,.slotEX{
+    display: none;
+}
+
+.formWarning{
+    border: orange solid 1px;
+    box-shadow: 1px 1px 26px 2px orange;
+    -webkit-box-shadow: 1px 1px 26px 2px orange;
+    -moz-box-shadow: 1px 1px 26px 2px orange;
+}
+
+.msjAdvertencia{
+    font-size: 0.8em;
+    color: red;
+    font-weight: bold;
+    display: none;
+}

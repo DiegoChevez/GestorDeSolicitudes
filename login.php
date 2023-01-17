@@ -51,19 +51,44 @@
     <!-- Configuraciones / JavaScript -->
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="js/config.js"></script>
-    <script src="sweetalert2.all.min.js"></script> <!-- SweetAlert / Pluggin -->
+
+
+    <!-- Configuraciones PHP -->
     <?php
-    if(!isset($_GET['error'])){
+    
+    $error = $_GET['error'];
+
+    switch ($error) {
+        case 'UsuarioInexistente':
     ?>
-    <script>
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-        footer: '<a href="">Why do I have this issue?</a>'
-        })
-    </script>
-    <?php }?>
+            <script>
+            Swal.fire({icon: 'error',title: 'Ha ocurrido algo!',text: 'Usuario o contraseña Invalida',text: 'Revise sus credenciales'})
+            </script>
+    <?php 
+        break;
+
+        case 'CamposVacios':
+    ?>
+            <script>
+            Swal.fire({icon: 'error',title: 'Existen Campos Vacios',text: 'Porfavor revisar los campos'})
+            </script>
+    <?php
+        break;
+        default:
+        ?>
+        <script>
+            Swal.fire({
+            position: 'center-center',
+            icon: 'success',
+            title: 'Bienvenido',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+        <?php
+        break;
+        }
+    ?>
 
 </body>
 
