@@ -4,6 +4,7 @@ const $slot2 = document.querySelector('.slot2');
 const $slot3 = document.querySelector('.slot3');
 const $slot4 = document.querySelector('.slot4');
 const $slot5 = document.querySelector('.slot5');
+const $slot6 = document.querySelector('.slot6');
 
 function Part1(){
     var $contacto = document.getElementById('NombreContacto').value;
@@ -131,36 +132,100 @@ function Part3(){
 
 function Part5(){
     var $tProduccion = document.getElementById('TipoProduccion').value;
-    var $fechaProduccion = document.getElementById('FechaProduccion').value;
-    var $horarioProduccion = document.getElementById('HorarioProduccion').value;
+    var $fechaProduccion = document.getElementById('FechaProduccionP').value;
+    var $horarioProduccion = document.getElementById('HorarioProduccionP').value;
 
-    if($fechaProduccion==''){
-        let InputFechaProduccion = document.querySelector("#FechaProduccion");
-        InputFechaProduccion.classList.add("formWarning")
+    if($tProduccion==''){
+        let InputTipoProduccion = document.querySelector("#TipoProduccion");
+        InputTipoProduccion.classList.add("formWarning");
 
-        let msjAdvertencia = document.getElementById('AdvFechaP');
+        let msjAdvertencia = document.getElementById('AdvTipoP');
         msjAdvertencia.style.setProperty("display","block");
-        msjAdvertencia.innerHTML = "*Seleccione una Fecha"
+        msjAdvertencia.innerHTML = "*Seleccion un tipo de produccion"
     }else{
-        let AdvAnterior =  document.getElementById('AdvFechaP');
-        AdvAnterior.style.setProperty("display","none");
-        document.getElementById('FechaProduccion').classList.remove("formWarning");
-
-        if($horarioProduccion=='0'){
-            let inputHorarioProduccion = document.querySelector('#HorarioProduccion');
-            inputHorarioProduccion.classList.add("formWarning");
-
-            let msjAdvertencia = document.getElementById('AdvHorarioP');
-            msjAdvertencia.style.setProperty("display","block");
-            msjAdvertencia.innerHTML = "*Seleccione un Horario"
-        }else{
-            let AdvAnterior =  document.getElementById('AdvHorarioP');
+        if($fechaProduccion==''){
+            let AdvAnterior =  document.getElementById('AdvTipoP');
             AdvAnterior.style.setProperty("display","none");
-            document.getElementById('HorarioProduccion').classList.remove("formWarning");
+            document.getElementById('TipoProduccion').classList.remove("formWarning");
 
-            $slot3.style.setProperty("display","none");
-            $slot4.style.setProperty("display","block");
+            let InputFechaProduccion = document.querySelector("#FechaProduccionP");
+            InputFechaProduccion.classList.add("formWarning")
+    
+            let msjAdvertencia = document.getElementById('AdvFechaPP');
+            msjAdvertencia.style.setProperty("display","block");
+            msjAdvertencia.innerHTML = "*Seleccione una Fecha"
+        }else{
+            let AdvAnterior =  document.getElementById('AdvFechaPP');
+            AdvAnterior.style.setProperty("display","none");
+            document.getElementById('FechaProduccionP').classList.remove("formWarning");
+    
+            if($horarioProduccion=='0'){
+                let inputHorarioProduccion = document.querySelector('#HorarioProduccionP');
+                inputHorarioProduccion.classList.add("formWarning");
+    
+                let msjAdvertencia = document.getElementById('AdvHorarioPP');
+                msjAdvertencia.style.setProperty("display","block");
+                msjAdvertencia.innerHTML = "*Seleccione un Horario"
+            }else{
+                let AdvAnterior =  document.getElementById('AdvHorarioPP');
+                AdvAnterior.style.setProperty("display","none");
+                document.getElementById('HorarioProduccionP').classList.remove("formWarning");
+    
+                $slot5.style.setProperty("display","none");
+                $slot4.style.setProperty("display","block");
+            }
         }
     }
 
+    
+
+}
+
+function Part4() {
+    var $textProposito = document.getElementById('textProposito').value;
+    var $fechaEntrega = document.getElementById('fechaEntrega').value;
+    var $ImgReferencia = document.getAnimations('ImgReferencia').value;
+
+    if($textProposito==''){
+        let InputTextProposito = document.querySelector("#textProposito");
+        InputTextProposito.classList.add("formWarning");
+
+        let msjAdvertencia = document.getElementById('AdvTxtProsposito');
+        msjAdvertencia.style.setProperty("display","block");
+        msjAdvertencia.innerHTML = "*Por favor extienda el motivo de la solicitud";
+    }else{
+        if($fechaEntrega==''){
+            let AdvAnterior =  document.getElementById('AdvTxtProsposito');
+            AdvAnterior.style.setProperty("display","none");
+            document.getElementById('textProposito').classList.remove("formWarning");
+
+            let InputFechaEntrega = document.querySelector("#fechaEntrega");
+            InputFechaEntrega.classList.add("formWarning")
+    
+            let msjAdvertencia = document.getElementById('AdvfechaEntregaFF');
+            msjAdvertencia.style.setProperty("display","block");
+            msjAdvertencia.innerHTML = "*Seleccione una Fecha de Entrega"
+        }else{
+            if($ImgReferencia==''){
+                let AdvAnterior =  document.getElementById('AdvfechaEntregaFF');
+                AdvAnterior.style.setProperty("display","none");
+                document.getElementById('fechaEntrega').classList.remove("formWarning");
+    
+                let InputFechaEntrega = document.querySelector("#ImgReferencia");
+                InputFechaEntrega.classList.add("formWarning")
+        
+                let msjAdvertencia = document.getElementById('AdvImgReferencia');
+                msjAdvertencia.style.setProperty("display","block");
+                msjAdvertencia.innerHTML = "*Porfavor suba una imagen de muestra"
+            }else{
+                let AdvAnterior =  document.getElementById('AdvImgReferencia');
+                AdvAnterior.style.setProperty("display","none");
+                document.getElementById('ImgReferencia').classList.remove("formWarning");
+    
+                $slot4.style.setProperty("display","none");
+                $slot6.style.setProperty("display","block");
+
+            }
+        }
+    }
 }

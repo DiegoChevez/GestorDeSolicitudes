@@ -96,27 +96,31 @@
 
                 <label>Elige la Produccion</label> <br>
                 <select class="form-select" name="" id="TipoProduccion">
-                    <option value="0" disabled hidden selected>Producciones Multimedia</option>
+                    <option value="" disabled hidden selected>Producciones Multimedia</option>
                     <option value="fotografias"> Toma de fotografias </option>
                     <option value="video"> Grabacion de video </option>
                     <option value="ProduccionCompleta"> Video y Edicion </option>
                 </select>
+                <label for="TipoProduccion" class="msjAdvertencia" id="AdvTipoP"></label>
+
                 
                 <br><br>
 
                 <label class="form-label" for="">Especifica la fecha a realizar la produccion</label> <br>
-                <input class="form-control" type="date" name="" id="FechaProduccion">
+                <input class="form-control" type="date" name="FechaProduccion" id="FechaProduccionP">
+                <label for="FechaProduccion" class="msjAdvertencia" id="AdvFechaPP"></label>
 
                 <br><br>
 
                 <label class="form-label" for="">Escoje el horario a realizar la produccion</label><br>
-                <select class="form-select" name="" id="HorarioProduccion">
+                <select class="form-select" name="" id="HorarioProduccionP">
                     <option value="0" disabled hidden selected>Horarios Disponibles</option>
                     <option value="8-10-am"> 8:00 a 10:00 AM </option>
                     <option value="10-12-md"> 10:00 - 12:00 MD </option>
                     <option value="2-4-pm"> 2:00 - 4:00 PM </option>
                 </select>
                 <i>Esta fecha sera considerada por nuestro equipo, por lo que le pedimos estar pendiente a su confirmacion o en caso contrario la fecha propuesta</i>
+                <label for="HorarioProduccion" class="msjAdvertencia" id="AdvHorarioPP"></label>
 
                 <br><br>
 
@@ -130,26 +134,38 @@
             <fieldset class="slot4"><legend>Informacion Final</legend>
 
                 <label class="form-label" for="textProposito">¿Cual es el Proposito?</label> <br>
-                <textarea name="textProposito" class="form-control" placeholder="Proposito" id="floatingTextarea"></textarea><br>
+                <textarea name="textProposito" class="form-control" placeholder="Proposito" id="textProposito"></textarea>
+                <label for="textProposito" class="msjAdvertencia" id="AdvTxtProsposito"></label>
+                <br>
 
                 <label class="form-label" for="textDetalles">Detalles</label> <br>
-                <textarea name="textDetalles" class="form-control" placeholder="Detalles" id="floatingTextarea"></textarea>
+                <textarea name="textDetalles" class="form-control" placeholder="Detalles" id="textDetalles"></textarea>
                 <i>Detalles que tiene que llevar el arte solicitado o cualquier información relevante para la producción.</i>
                 <i>Si es vídeo defina el enfoque o el mensaje a transmitir.Asegúrate de escribir todo lo necesario para la creación del arte.</i> <br>
 
                 <label class="form-label" for="fechaEntrega">Seleccione la fecha de entrega final</label>
-                <input class="form-control" type="date" name="fechaEntrega" id="">
-
+                <input class="form-control" type="date" name="fechaEntrega" id="fechaEntrega">
+                <label for="fechaEntrega" class="msjAdvertencia" id="AdvfechaEntregaFF"></label>
                 <br>
 
                 <label class="form-label" for="">Referecias</label>
-                <input class="form-control" type="file" name="" id="">
+                <input class="form-control" type="file" name="ImgReferencia" id="ImgReferencia">
+                <label for="ImgReferencia" class="msjAdvertencia" id="AdvImgReferencia"></label>
                 <i>Si tienes alguna referencia de arte o algo que necesites que se tome en consideración para la creación, adjúntala aquí.Si es un vídeo, debes adjuntar guion o un pequeño resumen.</i>
+                
 
                 <fieldset><legend>Nota</legend>
                     <i>Te recordamos que los  tiempos estimados para poderte dar un buen servicio tanto de de producción como de diseño varían de 2 a 3 semanas. En el caso de diseño, este tiempo es separado del tiempo que toma el proveedor de hacer entregas. Por favor confirma que estas enterado.</i>
                 </fieldset>
 
+                <input class="btn btn-info" type="button" value="Siguiente" onclick="Part4()">
+
+            </fieldset>
+
+            <fieldset class="slot6"><legend>Comfirmacion</legend>
+
+                <input type="submit" class="btn btn-success" value="Confirmar Envio">
+                <input type="submit" class="btn btn-info" value="Cancelar Confirmar">
 
             </fieldset>
 
