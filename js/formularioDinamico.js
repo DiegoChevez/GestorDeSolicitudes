@@ -95,25 +95,33 @@ function Part2(){
 }
 
 function Part3(){
-    var $fProduccion = document.getElementById('FechaProduccion').value;
-    var $hProduccion = document.getElementById('HorarioProduccion').value;
+    var $fechaProduccion = document.getElementById('FechaProduccion').value;
+    var $horarioProduccion = document.getElementById('HorarioProduccion').value;
 
-    if($fProduccion==''){
-        let inputFproduccion = document.querySelector('#FechaProduccion').value;
-        inputFproduccion.classList.add("formWarning");
+    if($fechaProduccion==''){
+        let InputFechaProduccion = document.querySelector("#FechaProduccion");
+        InputFechaProduccion.classList.add("formWarning")
 
         let msjAdvertencia = document.getElementById('AdvFechaP');
-        msjAdvertencia,style.setProperty("display","block");
+        msjAdvertencia.style.setProperty("display","block");
         msjAdvertencia.innerHTML = "*Seleccione una Fecha"
     }else{
-        if($hProduccion=='0'){
-            let inputHproduccion = document.querySelector('#HorarioProduccion').value;
-            inputHproduccion.classList.add("formWarning");
+        let AdvAnterior =  document.getElementById('AdvFechaP');
+        AdvAnterior.style.setProperty("display","none");
+        document.getElementById('FechaProduccion').classList.remove("formWarning");
+
+        if($horarioProduccion=='0'){
+            let inputHorarioProduccion = document.querySelector('#HorarioProduccion');
+            inputHorarioProduccion.classList.add("formWarning");
 
             let msjAdvertencia = document.getElementById('AdvHorarioP');
-            msjAdvertencia,style.setProperty("display","block");
+            msjAdvertencia.style.setProperty("display","block");
             msjAdvertencia.innerHTML = "*Seleccione un Horario"
         }else{
+            let AdvAnterior =  document.getElementById('AdvHorarioP');
+            AdvAnterior.style.setProperty("display","none");
+            document.getElementById('HorarioProduccion').classList.remove("formWarning");
+
             $slot3.style.setProperty("display","none");
             $slot4.style.setProperty("display","block");
         }
@@ -122,17 +130,37 @@ function Part3(){
 }
 
 function Part5(){
-    var $fProduccion = document.getElementById('FechaProduccion').value;
-    var $hProduccion = document.getElementById('HorarioProduccion').value;
     var $tProduccion = document.getElementById('TipoProduccion').value;
+    var $fechaProduccion = document.getElementById('FechaProduccion').value;
+    var $horarioProduccion = document.getElementById('HorarioProduccion').value;
 
-    if($fProduccion==''){
-        let inputFproduccion = document.querySelector('#FechaProduccion').value;
-        inputFproduccion.classList.add("formWarning");
+    if($fechaProduccion==''){
+        let InputFechaProduccion = document.querySelector("#FechaProduccion");
+        InputFechaProduccion.classList.add("formWarning")
 
         let msjAdvertencia = document.getElementById('AdvFechaP');
-        msjAdvertencia,style.setProperty("display","block");
+        msjAdvertencia.style.setProperty("display","block");
         msjAdvertencia.innerHTML = "*Seleccione una Fecha"
+    }else{
+        let AdvAnterior =  document.getElementById('AdvFechaP');
+        AdvAnterior.style.setProperty("display","none");
+        document.getElementById('FechaProduccion').classList.remove("formWarning");
+
+        if($horarioProduccion=='0'){
+            let inputHorarioProduccion = document.querySelector('#HorarioProduccion');
+            inputHorarioProduccion.classList.add("formWarning");
+
+            let msjAdvertencia = document.getElementById('AdvHorarioP');
+            msjAdvertencia.style.setProperty("display","block");
+            msjAdvertencia.innerHTML = "*Seleccione un Horario"
+        }else{
+            let AdvAnterior =  document.getElementById('AdvHorarioP');
+            AdvAnterior.style.setProperty("display","none");
+            document.getElementById('HorarioProduccion').classList.remove("formWarning");
+
+            $slot3.style.setProperty("display","none");
+            $slot4.style.setProperty("display","block");
+        }
     }
 
 }
